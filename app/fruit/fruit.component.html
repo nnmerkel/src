@@ -1,0 +1,13 @@
+<ul class="fruits">
+    <li class="fruit" id="{{fruit.cssID}}" tabindex="1" *ngFor="let fruit of fruits | sortByField: 'votes'">
+        <span class="name-container"><h2 class="name">{{fruit.name}}</h2></span>
+        <span class="icon"><img src="../../../../assets/images/{{fruit.name | lowercase}}-icon.png"></span>
+        <h2 class="name">{{fruit.name}}</h2>
+        <ul class="info">
+            <li>Around {{fruit.info.calories}} calories</li>
+            <li>Rich in {{fruit.info.richIn}}</li>
+            <li>Did you know that {{fruit.info.funFact}}</li>
+        </ul>
+        <div class="vote-button"><button (click)="vote(fruit)">Vote for {{fruit.name}}s!</button></div>
+    </li>
+</ul>
